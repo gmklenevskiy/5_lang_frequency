@@ -1,6 +1,13 @@
 # Frequency Analysis of Words
 
-[TODO. There will be project description]
+This script analyses the text and then print the most common words in this text.
+
+# How to launch
+
+1) To launch the script
+```
+lang_frequency.py <path to file>
+```
 
 # Project Goals
 
