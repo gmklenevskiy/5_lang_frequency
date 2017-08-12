@@ -8,7 +8,7 @@ def load_data(filepath):
     if not os.path.exists(filepath):
         return None
     with open(filepath, 'r') as text:
-        return text.read()
+        return text.read().lower()
         
 
 
@@ -16,13 +16,17 @@ def get_most_frequent_words(text):
     words = re.findall(r'\w+',str(text))
     return collections.Counter(words).most_common(NUMBER_OF_FREQUENT_WORDS)
 
+
 if __name__ == '__main__':
     if len(sys.argv)>1:
         filepath = sys.argv[1]
         text = load_data(filepath)
-        print('Most frequent words: \n')
-        words = get_most_frequent_words(text)
-        for word in words:
-            print(word)  
+        if text == None:
+            print('The wrong filepath or filename')
+        else:
+            print('Most frequent words: \n')
+            words = get_most_frequent_words(text)
+            for word in words:
+                print(word)  
     else:
         print("Please, enter the filepath")
