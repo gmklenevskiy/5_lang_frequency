@@ -3,11 +3,12 @@ import os
 import re
 import collections
 NUMBER_OF_FREQUENT_WORDS = 10
+n = 1
 
 def load_data(filepath):
     if not os.path.exists(filepath):
         print('The wrong filepath or filename')
-        raise SystemExit(1)
+        raise SystemExit(n)
     with open(filepath, 'r') as text:
         return text.read().lower()
 
